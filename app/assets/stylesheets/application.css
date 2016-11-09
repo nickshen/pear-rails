@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+header {
+  height: 60px;
+}
+
+.navbar-default {
+  position: fixed;
+}
+
+.top-bar-section, .title-area {
+  display: inline-block;
+}
+
+.navbar-default ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-default li {
+  display: inline-block;
+}
