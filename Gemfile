@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Custom added gems
-gem 'spring',        group: :development
 gem 'devise'
 gem 'foundation-rails', '5.4.5'
 gem 'simple_form'
