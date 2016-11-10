@@ -1,10 +1,32 @@
-<nav class="navbar navbar-default navbar-fixed-top" data-topbar style="margin-bottom:25px">
-  <ul class="title-area">
-    <li class="name"><%= link_to 'Home', root_path %></li>
-  </ul>
-  <div class="top-bar-section">
-    <ul class="right">
-      <%= render 'layouts/navigation_links' %>
-    </ul>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <b>Pear</b>
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="name"><%= link_to 'Matches', root_path %></li>
+        <li class="name"><%= link_to 'Messages', root_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <%= render 'layouts/navigation_links' %>
+      </ul>
+    </div><!--/.nav-collapse -->
   </div>
 </nav>
