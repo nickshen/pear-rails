@@ -1,3 +1,4 @@
+<h1><%=@other_person.name%></h1>
 <% if @over_ten %>
     <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
@@ -24,12 +25,16 @@
     <% end %>
 </div>
 
-<%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
-    <div class=”field”>
-        <%= f.text_area :body, class: "form-control" %>
-    </div>
-    <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-    <div>
-        <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
-    </div>
+<% if @other_person.deleted? != true %>
+    <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+        <div class=”field”>
+            <%= f.text_area :body, class: "form-control" %>
+        </div>
+        <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+        <div>
+            <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
+        </div>
+    <% end %>
+<% else %>
+    <h4><%= @other_person.name%> has deleted his/her account.</h4>
 <% end %>

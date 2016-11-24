@@ -19,6 +19,12 @@ class MessagesController < ApplicationController
 			end
 		end
 		@message = @conversation.messages.new
+
+		if @conversation.sender_id != current_user.id
+    		@other_person = User.find(@conversation.sender_id)
+    	else
+    		@other_person = User.find(@conversation.recipient_id)
+    	end
 	end
 
 	def new
