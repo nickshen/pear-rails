@@ -1,0 +1,19 @@
+<div class="match-profile">
+  <div class="profile-pic">
+    <img src=<%= "https://s-media-cache-ak0.pinimg.com/736x/2a/9c/83/2a9c83a10376ba560c2309158ec0510c.jpg" or current_user.profile_pic %> />
+  </div>
+
+  <div class="row" style="margin-top:10px">
+    <div class="col-sm-8">
+      <h3 style="margin-top: 0px"><%= current_user.name or "<Name>"%></h3>
+      <h4> Age: <%= current_user.age or "<age>" %></h4>
+      <h4> Major: <%= current_user.major or "<major>" %></h4>
+      <h4> Interests:</h4>
+      <p><%= current_user.major or "<xxx>" %></p>
+    </div>
+    <div class="col-sm-4 sidebar-column">
+      <%= button_to "Like", root_path, :class => "button blocky", :method => :get  %>
+      <%= button_to "Dislike", root_path, :class => "button blocky", :method => :get  %>
+    </div>
+  </div>
+</div>

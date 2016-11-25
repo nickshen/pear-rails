@@ -8,7 +8,8 @@
 
   <h4> Age: <%= current_user.age or "<age>" %></h4>
   <h4> Major: <%= current_user.major or "<major>" %></h4>
-  <h4> Interests: <%= current_user.major or "<xxx>" %></h4>
+  <h4> Interests:</h4>
+  <p><%= current_user.major or "<xxx>" %></p>
 </div>
 <!-- todo:
   edit interests to point to interests once column is created,
