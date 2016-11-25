@@ -1,13 +1,11 @@
-<h1>Hello <%=current_user.name%></h1>
-
-<h2>Your Profile</h2>
+<h1>Hi <%= current_user.name or "there"%>, this is your profile.</h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :name, required: false %>
+    <%= f.input :name, required: true %>
     <%= f.input :age, required: false %>
     <%= f.input :major, required: false %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

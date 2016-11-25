@@ -1,2 +1,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.form-inputs input {
+  margin-left: 8px;
+}
+
+nav .container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.profile-pic {
+  img {
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+}
+
+.profile-column {
+  border-left:1px solid #ddd
+}
+
+.subprofile {
+  height: 100%;
+}

@@ -1,0 +1,16 @@
+<div class="subprofile">
+  <div class="profile-pic">
+    <img src=<%= "https://avatars3.githubusercontent.com/u/9123187?v=3&s=460" or current_user.profile_pic %>
+    />
+  </div>
+
+  <h3><%= current_user.name or "<Name>"%></h3>
+
+  <h4> Age: <%= current_user.age or "<age>" %></h4>
+  <h4> Major: <%= current_user.major or "<major>" %></h4>
+  <h4> Interests: <%= current_user.major or "<xxx>" %></h4>
+</div>
+<!-- todo:
+  edit interests to point to interests once column is created,
+  change order of profile-pic link once profile_pic column is made,
+  -->
