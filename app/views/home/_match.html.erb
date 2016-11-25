@@ -1,6 +1,5 @@
 <div class="match-profile">
-  <div class="profile-pic">
-    <img src=<%= "https://s-media-cache-ak0.pinimg.com/736x/2a/9c/83/2a9c83a10376ba560c2309158ec0510c.jpg" or current_user.profile_pic %> />
+  <div class="profile-pic" style="background: url('http://celebrityimages.org/images/4420495/4420495_8.jpeg');">
   </div>
 
   <div class="row" style="margin-top:10px">
@@ -12,8 +11,8 @@
       <p><%= current_user.major or "<xxx>" %></p>
     </div>
     <div class="col-sm-4 sidebar-column">
-      <%= button_to "Like", root_path, :class => "button blocky", :method => :get  %>
-      <%= button_to "Dislike", root_path, :class => "button blocky", :method => :get  %>
+      <%= button_to "Like", root_path, :class => "button blocky like", :method => :get  %>
+      <%= button_to "Dislike", root_path, :class => "button blocky dislike", :method => :get  %>
     </div>
   </div>
 </div>
