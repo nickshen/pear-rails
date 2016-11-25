@@ -15,8 +15,12 @@
     <div class="col-sm-9">
       <%= yield %>
     </div>
-    <div class="col-sm-3 profile-column">
-      <%= render 'layouts/profile' %>
+    <div class="col-sm-3 sidebar-column">
+      <% if user_signed_in? %>
+        <%= render 'layouts/profile' %>
+      <% else %>
+        
+      <% end %>
     </div>
   </div>
 
