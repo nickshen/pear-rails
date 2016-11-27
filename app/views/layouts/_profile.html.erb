@@ -8,7 +8,7 @@
 
   <h4> Age: <%= current_user.age or "<age>" %></h4>
   <h4> Major: <%= current_user.major or "<major>" %></h4>
-  <h4> Your Tags: </h4>
+  <h4> Interests: </h4>
     <p><% if current_user.tags.any? %>
         <% current_user.tags.each do |tag| %>
           <%= tag.name %>
