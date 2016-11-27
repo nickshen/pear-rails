@@ -12,21 +12,28 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <hr><%= f.label :tag_list, "Interests (separated by commas)" %><br>
-    Enter to add: <%= f.text_field :tag_list %><hr>
-
     <%= f.input :current_password, required: true %>
     <p>we need your current password to confirm your changes.</p>
-
-    <!-- allow changing password? -->
-    <!--<%= f.input :password, autocomplete: "off", hint: "   leave blank if you don't want to change it.", required: false %>
-    <%= f.input :password_confirmation, required: false %>-->
   </div>
 
   <div class="form-actions" style="margin-top:10px;">
     <%= f.button :submit, "Update" %>
   </div>
 <% end %><hr>
+
+<div class="form-inputs">
+  <%= simple_form_for current_user, :url => add_tag_path do |f|%>
+    <%= f.label :tag_list, "Add Interests (separated by commas)" %>
+    <%= f.input :tag_list%>
+    <%= f.button :submit %>
+  <% end %><hr>
+
+  <%= simple_form_for current_user, :url => remove_tag_path do |f|%>
+    <%= f.label :tag_list, "Remove Interests (separated by commas)" %>
+    <%= f.input :tag_list%>
+    <%= f.button :submit %>
+  <% end %>
+</div>
 
 <h3>Cancel my account</h3>
 

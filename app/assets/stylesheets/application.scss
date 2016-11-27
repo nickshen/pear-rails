@@ -12,8 +12,14 @@ hr {
   margin-bottom: 10px;
 }
 
-.form-inputs input {
-  margin-left: 8px;
+.form-inputs {
+  input {
+    margin-left: 8px;
+  }
+
+  input.btn {
+    margin-left: 0px;
+  } 
 }
 
 nav .container {
