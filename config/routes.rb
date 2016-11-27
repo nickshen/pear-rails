@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :messages
 
   resources :matches
+
+  resources :tags, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
