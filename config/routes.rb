@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :conversations do
-    resources :messages
+  resources :messages
+
+  resources :matches
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

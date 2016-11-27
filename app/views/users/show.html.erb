@@ -1,0 +1,13 @@
+<% title "My Profile" %>
+<p>Username: <%=h @user.username %></p>
+<p><%= link_to "Find Matches", users_path %></p>
+
+<h2>Your Matches</h2>
+<ul>
+  <% for match in @user.matches %>
+  <li>
+    <%= h match.friend.username %>
+    (<%= link_to "remove", match, :method => :delete %>)
+  </li>
+  <% end %>
+</ul>
