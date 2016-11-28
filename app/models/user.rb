@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   acts_as_taggable_on :tags
   acts_as_taggable_on :skills, :interests
 
+  def conversations
+    Conversation.where('sender_id= ? OR recipient_id= ?', id, id)
+  end
+
   has_many :requests
   has_many :matches
   has_many :matched_users, :through => :matches, dependent: :destroy do

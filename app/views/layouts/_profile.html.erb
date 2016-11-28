@@ -24,7 +24,7 @@
   <hr>
 
   <p><i> Matches: <%= @matches or "#" %></i> </p>
-  <p><i> Messages: <%= @conversations or "#" %></i> </p>
+  <p><i> Conversations: <%= current_user.conversations.count %></i> </p>
 
 </div>
 <!-- todo:
