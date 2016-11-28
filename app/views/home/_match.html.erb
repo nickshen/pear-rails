@@ -4,15 +4,23 @@
 
   <div class="row" style="margin-top:10px">
     <div class="col-sm-8">
-      <h3 style="margin-top: 0px"><%= current_user.name or "<Name>"%></h3>
-      <h4> Age: <%= current_user.age or "<age>" %></h4>
-      <h4> Major: <%= current_user.major or "<major>" %></h4>
-      <h4> Interests:</h4>
+      <h3 style="margin-top: 0px;"><%= current_user.name or "<Name>"%></h3>
+
+      <h4> Age: <span style="font-weight: 400;">
+        <%= current_user.age or "<age>" %> yrs.
+      </span></h4>
+
+      <h4> Major: <span style="font-weight: 400;">
+      <%= current_user.major or "<major>" %>
+      </span></h4>
+      
+      <h4> Interests: </h4>
       <p><% if current_user.tags.any? %>
-        <% current_user.tags.each do |tag| %>
-          <%= tag.name %>,
-        <% end %>
-       <% end %></p>
+          <% current_user.tags.each do |tag| %>
+            <%= tag.name %>,
+          <% end %>
+         <% end %>
+      </p>
     </div>
     <div class="col-sm-4 sidebar-column">
       <%= button_to "Partner up!", root_path, :class => "button blocky like", :method => :get  %>

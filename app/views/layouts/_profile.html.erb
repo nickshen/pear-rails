@@ -15,12 +15,12 @@
   </span></h4>
   
   <h4> Interests: </h4>
-    <p><% if current_user.tags.any? %>
-        <% current_user.tags.each do |tag| %>
-          <%= tag.name %>,
-        <% end %>
-       <% end %>
-    </p>
+  <p><% if current_user.tags.any? %>
+      <% current_user.tags.each do |tag| %>
+        <%= tag.name %>,
+      <% end %>
+     <% end %>
+  </p>
   <hr>
 
   <p><i> Matches: <%= @matches or "#" %></i> </p>
