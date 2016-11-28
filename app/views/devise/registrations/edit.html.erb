@@ -26,14 +26,14 @@
     <%= simple_form_for current_user, :url => add_tag_path do |f|%>
       <%= f.label :tag_list, "Add Interests (comma separated)" %>
       <%= f.input :tag_list, label: false, input_html: { class: 'tagbox' } %>
-      <%= f.button :submit %>
+      <%= f.button :submit, :value => "Add" %>
     <% end %>
   </div>
   <div class="col-sm-6">
     <%= simple_form_for current_user, :url => remove_tag_path do |f|%>
       <%= f.label :tag_list, "Remove Interests" %>
       <%= f.input :tag_list, label: false, input_html: { class: 'tagbox' } %>
-      <%= f.button :submit %>
+      <%= f.button :submit, :value => "Remove" %>
     <% end %>
   </div>
 </div><hr>
