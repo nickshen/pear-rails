@@ -63,11 +63,11 @@ nav a {
 .button.blocky {
   display: block;
   width: 100%;
-  padding: 16px 16px;
+  padding: 14px 12px;
   margin-bottom: 12px;
 
   color: white;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 500;
 }
 
@@ -79,4 +79,10 @@ nav a {
 .button.blocky.dislike {
   background-color: $red;
   border: $red-dark solid 2px;
+}
+
+.tagbox {
+  margin-left: 0px !important;
+  margin-bottom: 10px;
+  width: 100%;
 }

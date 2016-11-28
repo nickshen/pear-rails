@@ -21,22 +21,24 @@
   </div>
 <% end %><hr>
 
-<div class="form-inputs">
-  <%= simple_form_for current_user, :url => add_tag_path do |f|%>
-    <%= f.label :tag_list, "Add Interests (separated by commas)" %>
-    <%= f.input :tag_list%>
-    <%= f.button :submit %>
-  <% end %><hr>
-
-  <%= simple_form_for current_user, :url => remove_tag_path do |f|%>
-    <%= f.label :tag_list, "Remove Interests (separated by commas)" %>
-    <%= f.input :tag_list%>
-    <%= f.button :submit %>
-  <% end %>
-</div>
+<div class="form-inputs row">
+  <div class="col-sm-6">
+    <%= simple_form_for current_user, :url => add_tag_path do |f|%>
+      <%= f.label :tag_list, "Add Interests (comma separated)" %>
+      <%= f.input :tag_list, label: false, input_html: { class: 'tagbox' } %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+  <div class="col-sm-6">
+    <%= simple_form_for current_user, :url => remove_tag_path do |f|%>
+      <%= f.label :tag_list, "Remove Interests" %>
+      <%= f.input :tag_list, label: false, input_html: { class: 'tagbox' } %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div><hr>
 
 <h3>Cancel my account</h3>
-
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<hr><%= link_to "Back", :back %>
+<hr><%= link_to "< Back", :back %>
