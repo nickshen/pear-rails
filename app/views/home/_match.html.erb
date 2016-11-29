@@ -13,7 +13,7 @@
       <h4> Major: <span style="font-weight: 400;">
       <%= current_user.major or "<major>" %>
       </span></h4>
-      
+
       <h4> Interests: </h4>
       <p><% if current_user.tags.any? %>
           <% current_user.tags.each do |tag| %>
@@ -23,7 +23,7 @@
       </p>
     </div>
     <div class="col-sm-4 sidebar-column">
-      <%= button_to "Partner up!", root_path, :class => "button blocky like", :method => :get  %>
+      <%= button_to "Partner up!", root_path, :class => "button blocky like", :method => :post  %>
       <%= button_to "Pass..", root_path, :class => "button blocky dislike", :method => :get  %>
     </div>
   </div>
