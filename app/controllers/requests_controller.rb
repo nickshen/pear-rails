@@ -11,9 +11,9 @@ class RequestsController < ApplicationController
     @request = current_user.requests.new(match: match, status: params[:status])
 
     @request.save
-    redirect_to root_path
+    redirect_to :back
   end
-  private#
+  private
 
   def update
     @request.accept

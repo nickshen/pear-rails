@@ -1,11 +1,20 @@
-<h3>Received Requests</h3>
+<h3>Received Requests</h3><hr>
 <div class=”ui segment”>
     <% @incoming.each do |request| %>
-        <p><%= request.user.name %></p>
+      <div class="row">
+        <div class="col-sm-2">
+          <%= gravatar_for request.user, size: 80 %>
+        </div>
+        <div class="col-sm-10">
+          <p style="display: inline-block;"><%= request.user.name %></p>
+          
+          <%= button_to "Accept", requests_path(match_id: request.user.id, status: true), :class => "button blocky small like", method: :post  %>
+        </div>
+      </div><hr>
     <% end %>
 </div>
 
-<h3>Sent Requests</h3>
+<br><h3>Sent Requests</h3><hr>
 <div class=”ui segment”>
     <% @outgoing.each do |request| %>
         <p><%= request.user.name %></p>
