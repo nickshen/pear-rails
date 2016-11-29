@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :conversations do
+  end
   resources :messages
 
-  resources :matches
+  resources :matches do
 
   end
   resources :tags, only: [:index, :show]

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127061815) do
+ActiveRecord::Schema.define(version: 20161129062513) do
+
+  create_table "connections", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "connections", ["match_id"], name: "index_connections_on_match_id"
+  add_index "connections", ["user_id"], name: "index_connections_on_user_id"
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -21,8 +31,6 @@ ActiveRecord::Schema.define(version: 20161127061815) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "match_id"
     t.string   "create"
     t.string   "destroy"
     t.datetime "created_at", null: false
@@ -42,11 +50,14 @@ ActiveRecord::Schema.define(version: 20161127061815) do
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "requests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.integer  "requesting_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "match_id"
   end
+
+  add_index "requests", ["match_id"], name: "index_requests_on_match_id"
+  add_index "requests", ["user_id"], name: "index_requests_on_user_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
