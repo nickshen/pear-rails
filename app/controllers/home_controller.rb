@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 
   def index
     if current_user
-      @User = User.where.not(id: current_user.id).order('RANDOM()').first
+      @User = User.where.not(id: current_user.id).where.not(id: current_user.requests).order('RANDOM()').first
     end
   end
 
