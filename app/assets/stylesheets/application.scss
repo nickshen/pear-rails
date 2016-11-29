@@ -4,12 +4,16 @@
 $green: #2ecc71;
 $green-dark: #27ae60;
 
-$red: #e67e22;
-$red-dark: #d35400;
+$red: #e74c3c;
+$red-dark: #c0392b;
 
 hr {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.inline {
+  display: inline-block;
 }
 
 .form-inputs {
@@ -60,6 +64,10 @@ nav a {
   background-repeat: no-repeat !important;
 }
 
+.match-profile .profile-pic {
+  height: 100% !important;
+}
+
 .button.blocky {
   display: block;
   width: 100%;
@@ -69,6 +77,13 @@ nav a {
   color: white;
   font-size: 1.2em;
   font-weight: 500;
+}
+
+.button.blocky.small {
+  padding: 8px 2px;
+  font-size: 1em;
+  width: 100px;
+  display: inline-block;
 }
 
 .button.blocky.like {

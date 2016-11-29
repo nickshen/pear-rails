@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129062513) do
+ActiveRecord::Schema.define(version: 20161129085500) do
 
   create_table "connections", force: :cascade do |t|
     t.integer  "user_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20161129062513) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "match_id"
+    t.boolean  "status"
   end
 
   add_index "requests", ["match_id"], name: "index_requests_on_match_id"

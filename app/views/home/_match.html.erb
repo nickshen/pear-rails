@@ -1,9 +1,15 @@
+<% @User = User.order('RANDOM()').first %>
 <div class="match-profile">
-  <div class="profile-pic" style="background: url('http://celebrityimages.org/images/4420495/4420495_8.jpeg');">
+  <div class="profile-pic">
+    <%= square_avatar @User, size: 150 %>
   </div>
 
   <div class="row" style="margin-top:10px">
     <div class="col-sm-8">
+<<<<<<< HEAD
+=======
+      
+>>>>>>> d07d17e5daafe536506cf5d04a42feb1c5fe86cd
       <h3 style="margin-top: 0px;"><%= @User.name or "<Name>"%></h3>
 
       <h4> Age: <span style="font-weight: 400;">
@@ -23,8 +29,8 @@
       </p>
     </div>
     <div class="col-sm-4 sidebar-column">
-      <%= button_to "Partner up!", root_path, :class => "button blocky like", :method => :post  %>
-      <%= button_to "Pass..", root_path, :class => "button blocky dislike", :method => :get  %>
+      <%= button_to "Partner up!", requests_path(match_id: @User.id, status: true), :class => "button blocky like", method: :post  %>
+      <%= button_to "Pass..", requests_path(match_id: @User.id, status: false), :class => "button blocky dislike", :method => :post  %>
     </div>
   </div>
 </div>
