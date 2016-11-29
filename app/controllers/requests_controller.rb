@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
-  validate :not_friends
-  validate :not_pending
+  #validate :not_friends
+  #validate :not_pending
 
   before_action :set_request, except: [:index, :create]
 
