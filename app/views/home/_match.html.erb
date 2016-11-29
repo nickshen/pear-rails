@@ -4,7 +4,6 @@
 
   <div class="row" style="margin-top:10px">
     <div class="col-sm-8">
-      <% @User = User.order('RANDOM()').first %>
       <h3 style="margin-top: 0px;"><%= @User.name or "<Name>"%></h3>
 
       <h4> Age: <span style="font-weight: 400;">
