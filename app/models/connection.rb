@@ -8,16 +8,12 @@ class Connection < ActiveRecord::Base
   private
 
   def create_inverse_relationship
-    friend.friendships.create(friend: user)
+    match.connections.create(match: user)#
   end
 
   def destroy_inverse_relationship
-    friendship = friend.friendships.find_by(friend: user)
-    friendship.destroy if friendship
+    connection = match.connections.find_by(match: user)#
+    connection.destroy if connection#
   end
 
-  def accept
-    user.matches << match
-    destroy
-  end
 end

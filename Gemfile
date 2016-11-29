@@ -52,3 +52,5 @@ group :development do
 end
 
 gem 'acts-as-taggable-on', '~> 4.0'
+
+gem 'randomuser'
