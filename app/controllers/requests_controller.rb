@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
   end
 
   def create
-    match = User.match(params[:match_id])
+    match = User.find(params[:match_id])#
     @request = current_user.requests.new(match: match)
 
     if @request.save
@@ -19,6 +19,7 @@ class RequestsController < ApplicationController
       render json: @request.errors, status: :unprocessable_entity
     end
   end
+  private#
 
   def update
     @request.accept
