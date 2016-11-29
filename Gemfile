@@ -51,3 +51,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'acts-as-taggable-on', '~> 4.0'

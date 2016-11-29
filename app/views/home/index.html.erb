@@ -1,2 +1,7 @@
-<h1>Welcome to Pear.</h1>
-<p>Find your partners in just a few hundred swipes.</p>
+<% if user_signed_in? %>
+  <%= render 'home/match' %>
+<% else %>
+  <h1>Welcome to Pear.</h1>
+  <p>Find your partners in just a few hundred swipes.</p>
+  
+<% end %> 

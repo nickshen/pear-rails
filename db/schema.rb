@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125202401) do
+ActiveRecord::Schema.define(version: 20161129062513) do
+
+  create_table "connections", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "connections", ["match_id"], name: "index_connections_on_match_id"
+  add_index "connections", ["user_id"], name: "index_connections_on_user_id"
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -21,8 +31,6 @@ ActiveRecord::Schema.define(version: 20161125202401) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "match_id"
     t.string   "create"
     t.string   "destroy"
     t.datetime "created_at", null: false
@@ -42,11 +50,41 @@ ActiveRecord::Schema.define(version: 20161125202401) do
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "requests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.integer  "requesting_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "match_id"
   end
+
+  add_index "requests", ["match_id"], name: "index_requests_on_match_id"
+  add_index "requests", ["user_id"], name: "index_requests_on_user_id"
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["context"], name: "index_taggings_on_context"
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+  add_index "taggings", ["taggable_id"], name: "index_taggings_on_taggable_id"
+  add_index "taggings", ["taggable_type"], name: "index_taggings_on_taggable_type"
+  add_index "taggings", ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+  add_index "taggings", ["tagger_id"], name: "index_taggings_on_tagger_id"
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
