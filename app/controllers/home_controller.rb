@@ -7,7 +7,9 @@ class HomeController < ApplicationController
   end
 
   def index
-    @User = User.where.not(id: current_user.id).order('RANDOM()').first
+    if current_user
+      @User = User.where.not(id: current_user.id).order('RANDOM()').first
+    end
   end
 
   def _match

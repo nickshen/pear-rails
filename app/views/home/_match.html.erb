@@ -1,4 +1,3 @@
-<% @User = User.order('RANDOM()').first %>
 <div class="match-profile">
   <div class="profile-pic">
     <%= square_avatar @User, size: 150 %>
@@ -6,10 +5,6 @@
 
   <div class="row" style="margin-top:10px">
     <div class="col-sm-8">
-<<<<<<< HEAD
-=======
-      
->>>>>>> d07d17e5daafe536506cf5d04a42feb1c5fe86cd
       <h3 style="margin-top: 0px;"><%= @User.name or "<Name>"%></h3>
 
       <h4> Age: <span style="font-weight: 400;">
