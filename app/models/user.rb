@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :requests, dependent: :destroy
+  has_many :pending_matches, through: :requests, source: :match
+
+  has_many :connections, dependent: :destroy
+  has_many :matches, through: :connections
 
   acts_as_taggable_on :tags
   acts_as_taggable_on :skills, :interests
@@ -9,16 +14,8 @@ class User < ActiveRecord::Base
     Conversation.where('sender_id= ? OR recipient_id= ?', id, id)
   end
 
-  has_many :requests
-  has_many :matches
-  has_many :matched_users, :through => :matches, dependent: :destroy do
-    def with_match_data
-      select('users.*, matches.created_at AS match_created_at')
-    end
-
-    def count(column_name = :all)
-      super
-    end
+  def remove_match(match)
+    current_user.matches.destroy(match)
   end
 
   def match_created_at
@@ -32,4 +29,10 @@ class User < ActiveRecord::Base
   	update_attribute(:deleted?, true)
   end
 
+  def active_for_authentication?
+    # Uncomment the below debug statement to view the properties of the returned self model values.
+    # logger.debug self.to_yaml
+
+    super && (deleted? == false)
+  end
 end

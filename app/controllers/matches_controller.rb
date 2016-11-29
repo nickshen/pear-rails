@@ -1,20 +1,17 @@
 class MatchesController < ApplicationController
-  def create
-    @match = current_user.matches.build(:match_id => params[:match_id])
-    if @match.save
-      flash[:notice] = "Added a match."
-      redirect_to root_url
-    else
-      flash[:notice] = "Unable to add your match."
-      redirect_to root_url
-    end
+
+  def index
+    @matches = current_user.matches
+  end
+  
+  private
+
+  def set_friend
+    @match = current_user.matches.find(params[:id])
   end
 
   def destroy
-    @match = current_user.matches.find(params[:id])
-    @match.destroy
-    flash[:notice] = "Removed match."
-    redirect_to current_user
+    current_user.remove_match(@match)
+    head :no_content
   end
-
 end
