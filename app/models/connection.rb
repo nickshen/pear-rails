@@ -8,16 +8,21 @@ class Connection < ActiveRecord::Base
   private
 
   def create_inverse_relationship
+<<<<<<< HEAD
+    match.connections.create(match: user)#
+  end
+
+  def destroy_inverse_relationship
+    connection = match.connections.find_by(match: user)#
+    connection.destroy if connection#
+=======
     match.connection.create(match: user)
   end
 
   def destroy_inverse_relationship
     connection = match.connections.find_by(match: user)
     connection.destroy if connection
+>>>>>>> 39a06a388d3776278006794e35bd989cc1b8cfc4
   end
 
-  def accept
-    user.matches << match
-    destroy
-  end
 end
