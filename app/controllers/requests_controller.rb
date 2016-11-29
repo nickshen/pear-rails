@@ -13,6 +13,7 @@ class RequestsController < ApplicationController
     @request.save
     redirect_to root_path
   end
+  private#
 
   def update
     @request.accept

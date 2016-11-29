@@ -3,10 +3,10 @@ class MatchesController < ApplicationController
   def index
     @matches = current_user.matches
   end
-  
+
   private
 
-  def set_friend
+  def set_match#
     @match = current_user.matches.find(params[:id])
   end
 

@@ -1,22 +1,25 @@
+<% @User = User.order('RANDOM()').first %>
 <div class="match-profile">
-  <div class="profile-pic" style="background: url('http://celebrityimages.org/images/4420495/4420495_8.jpeg');">
+  <div class="profile-pic">
+    <%= square_avatar @User, size: 150 %>
   </div>
 
   <div class="row" style="margin-top:10px">
     <div class="col-sm-8">
-      <h3 style="margin-top: 0px;"><%= current_user.name or "<Name>"%></h3>
+      
+      <h3 style="margin-top: 0px;"><%= @User.name or "<Name>"%></h3>
 
       <h4> Age: <span style="font-weight: 400;">
-        <%= current_user.age or "<age>" %> yrs.
+        <%= @User.age or "<age>" %> yrs.
       </span></h4>
 
       <h4> Major: <span style="font-weight: 400;">
-      <%= current_user.major or "<major>" %>
+      <%= @User.major or "<major>" %>
       </span></h4>
 
       <h4> Interests: </h4>
-      <p><% if current_user.tags.any? %>
-          <% current_user.tags.each do |tag| %>
+      <p><% if @User.tags.any? %>
+          <% @User.tags.each do |tag| %>
             <%= tag.name %>,
           <% end %>
          <% end %>
