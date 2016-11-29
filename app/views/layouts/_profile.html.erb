@@ -1,7 +1,6 @@
 <div class="subprofile">
   <div class="profile-pic">
-    <img src=<%= "https://avatars3.githubusercontent.com/u/9123187?v=3&s=460" or current_user.profile_pic %>
-    />
+    <%= gravatar_for current_user, size: 150 %>
   </div>
 
   <h3><%= current_user.name or "<Name>"%></h3>
