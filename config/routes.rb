@@ -7,8 +7,14 @@ Rails.application.routes.draw do
   end
   resources :messages
 
+<<<<<<< HEAD
   resources :requests do
   #resources :matches do
+=======
+  resources :matches do
+  end
+  resources :requests do
+>>>>>>> 58efa6a4d1d070b2163126b231866a75b62ccf2b
 
   end
   resources :tags, only: [:index, :show]
@@ -16,7 +22,6 @@ Rails.application.routes.draw do
   patch 'add_tag' => 'users#add_tag'
   patch 'remove_tag' => 'users#remove_tag'
 
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

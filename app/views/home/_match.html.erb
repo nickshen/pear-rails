@@ -26,8 +26,8 @@
       </p>
     </div>
     <div class="col-sm-4 sidebar-column">
-      <%= button_to "Partner up!", root_path, :class => "button blocky like", :method => :post  %>
-      <%= button_to "Pass..", root_path, :class => "button blocky dislike", :method => :get  %>
+      <%= button_to "Partner up!", requests_path(match_id: current_user.id, status: true), :class => "button blocky like", method: :post  %>
+      <%= button_to "Pass..", requests_path(match_id: current_user.id, status: false), :class => "button blocky dislike", :method => :post  %>
     </div>
   </div>
 </div>

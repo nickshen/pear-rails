@@ -1,7 +1,10 @@
 class RequestsController < ApplicationController
+<<<<<<< HEAD
   #validate :not_friends
   #validate :not_pending
 
+=======
+>>>>>>> 58efa6a4d1d070b2163126b231866a75b62ccf2b
   before_action :set_request, except: [:index, :create]
 
   def index
@@ -10,14 +13,11 @@ class RequestsController < ApplicationController
   end
 
   def create
-    match = User.find(params[:match_id])#
-    @request = current_user.requests.new(match: match)
+    match = User.find(params[:match_id])
+    @request = current_user.requests.new(match: match, status: params[:status])
 
-    if @request.save
-      render :show, status: :created, location: @request
-    else
-      render json: @request.errors, status: :unprocessable_entity
-    end
+    @request.save
+    redirect_to root_path
   end
   private#
 

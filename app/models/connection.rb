@@ -15,5 +15,4 @@ class Connection < ActiveRecord::Base
     connection = match.connections.find_by(match: user)
     connection.destroy if connection
   end
-
 end
