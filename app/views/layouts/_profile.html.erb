@@ -6,9 +6,26 @@
 
   <h3><%= current_user.name or "<Name>"%></h3>
 
-  <h4> Age: <%= current_user.age or "<age>" %></h4>
-  <h4> Major: <%= current_user.major or "<major>" %></h4>
-  <h4> Interests: <%= current_user.major or "<xxx>" %></h4>
+  <h4> Age: <span style="font-weight: 400;">
+    <%= current_user.age or "<age>" %> yrs.
+  </span></h4>
+
+  <h4> Major: <span style="font-weight: 400;">
+  <%= current_user.major or "<major>" %>
+  </span></h4>
+  
+  <h4> Interests: </h4>
+  <p><% if current_user.tags.any? %>
+      <% current_user.tags.each do |tag| %>
+        <%= tag.name %>,
+      <% end %>
+     <% end %>
+  </p>
+  <hr>
+
+  <p><i> Matches: <%= @matches or "#" %></i> </p>
+  <p><i> Conversations: <%= current_user.conversations.count %></i> </p>
+
 </div>
 <!-- todo:
   edit interests to point to interests once column is created,
