@@ -4,7 +4,9 @@ This is an web application designed for college students to make deep personal c
 
 ### Prerequisites
 
-In order to upload a picture as your profile image, be sure to register your email on Gravatar: https://en.gravatar.com/
+* In order to upload a picture as your profile image, be sure to register your email on Gravatar: https://en.gravatar.com/
+
+* Note: this project was created using Rails version 4
 
 
 ## Built With
