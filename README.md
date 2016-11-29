@@ -20,10 +20,6 @@ In order to upload a picture as your profile image, be sure to register your ema
 * **Makena Fetzer** - [Click for Github](https://github.com/makenafetzer)
 * **Nick Shen** - [Click for Github](https://github.com/nickshen)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
 * This project was made by students enrolled in the Ruby on Rails DeCal course at the University of California-Berkeley.
