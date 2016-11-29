@@ -1,6 +1,11 @@
 <% title "My Profile" %>
 <p>Username: <%=h @user.username %></p>
 <p><%= link_to "Find Matches", users_path %></p>
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 center">
+		<%= gravatar_for @user, size: 150 %>
+	</div>
+</div>
 
 <h2>Your Matches</h2>
 <ul>
