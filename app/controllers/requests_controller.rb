@@ -1,10 +1,4 @@
 class RequestsController < ApplicationController
-<<<<<<< HEAD
-  #validate :not_friends
-  #validate :not_pending
-
-=======
->>>>>>> 58efa6a4d1d070b2163126b231866a75b62ccf2b
   before_action :set_request, except: [:index, :create]
 
   def index

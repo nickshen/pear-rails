@@ -7,16 +7,11 @@ Rails.application.routes.draw do
   end
   resources :messages
 
-<<<<<<< HEAD
   resources :requests do
-  #resources :matches do
-=======
-  resources :matches do
   end
-  resources :requests do
->>>>>>> 58efa6a4d1d070b2163126b231866a75b62ccf2b
 
-  end
+  #resources :matches do
+
   resources :tags, only: [:index, :show]
 
   patch 'add_tag' => 'users#add_tag'

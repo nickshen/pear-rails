@@ -1,6 +1,13 @@
-<h2>Your Requests</h2>
+<h3>Received Requests</h3>
+<div class=”ui segment”>
+    <% @incoming.each do |request| %>
+        <p><%= request.user.name %></p>
+    <% end %>
+</div>
+
+<h3>Sent Requests</h3>
 <div class=”ui segment”>
     <% @outgoing.each do |request| %>
-        <p>hi</p>
+        <p><%= request.user.name %></p>
     <% end %>
 </div>
