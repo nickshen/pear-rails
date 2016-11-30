@@ -39,17 +39,29 @@ There are 5 main models present in the app:
 
 ## Gems/APIs Added
 
-*jQuery
+* Devise [(Gem)](https://github.com/plataformatec/devise) - Log-in and authentication
 
-* [Gravatar](https://en.gravatar.com/) - Used to implement profile pictures
+* jquery-rails [(Gem)](https://rubygems.org/gems/jquery-rails) - for jquery framework
+
+* turbolinks [(Gem)](https://github.com/turbolinks/turbolinks) - for easy navigating across web app
+
+* foundation-rails [(Gem)](https://rubygems.org/gems/foundation-rails) - for sass framework and compass framework (styling on webpage)
+
+* simple-form [(Gem)](https://rubygems.org/search?utf8=%E2%9C%93&query=simple-form) - for timestamps and dates
+
+* bootstrap-sass [(Gem)](https://rubygems.org/gems/bootstrap-sass) - sass and bootstrap framework
+
+* bootstrap-sass [(Gem)](https://rubygems.org/gems/bootstrap-sass) - sass and bootstrap framework
+
+* carrierwave, mini_magick, fog - all for pictures
 
 ## Division of Labor
 
-* Alex - Implemented pictures, Completed README write up
-* Evan - 
-* Kyle - 
-* Makena - 
-* Nick - Styling (with jquery, bootstrap and html),
+* Alex - Implemented pictures, Completed README write up, debugging, schema
+* Evan - Edit user profiles, interests, 
+* Kyle - Implemented messaging, debugging
+* Makena - Match assoications, routing between users and interactions, README, video demo
+* Nick - Styling (with jquery, bootstrap, sass), log-in, edit user profile, debugging
 
 ## Acknowledgments
 
