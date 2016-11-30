@@ -14,9 +14,20 @@
     <% end %>
 </div>
 
+<% if current_user.requests.where(status: true).any? %>
 <br><h3>Sent Requests</h3><hr>
 <div class=”ui segment”>
-    <% @outgoing.each do |request| %>
-        <p><%= User.find_by(id: request).name %></p>
+    <% @outgoing_match.each do |request| %>
+        <p><%= User.find(request.match_id).name %></p>
     <% end %>
 </div>
+<% end %>
+
+<% if current_user.requests.where(status: false).any? %>
+<br><h3>Passed</h3><hr>
+<div class=”ui segment”>
+    <% @outgoing_passed.each do |request| %>
+        <p><%= User.find(request.match_id).name %></p>
+    <% end %>
+</div>
+<% end %>

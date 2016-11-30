@@ -3,7 +3,12 @@ class RequestsController < ApplicationController
 
   def index
     @incoming = Request.where(match: current_user)
-    @outgoing = current_user.requests
+    if current_user.requests.where(status: true).any?
+      @outgoing_match = current_user.requests.where(status: true)
+    end
+    if current_user.requests.where(status: false).any?
+      @outgoing_passed = current_user.requests.where(status: false)
+    end
   end
 
   def create
