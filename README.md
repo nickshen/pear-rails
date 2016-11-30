@@ -1,6 +1,8 @@
 # Pear - A Matching Service
 
-This is an web application designed for college students to make deep personal connections with their peers through mutual interests.
+This is an web application designed for college students to make deep personal connections with their peers through mutual interests. Users can request to partner up with other users on the home page
+and view requests initiated by other people under the requests tab. After a connection is
+established between two users, they can message each other.
 
 ### Prerequisites
 
@@ -12,7 +14,7 @@ This is an web application designed for college students to make deep personal c
 ## Built With
 
 * [Gravatar](https://en.gravatar.com/) - Used to implement profile pictures
-* Other???
+* Devise
 
 ## Authors
 
