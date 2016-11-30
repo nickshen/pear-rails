@@ -7,12 +7,7 @@
         </div>
         <div class="col-sm-10">
           <p style="display: inline-block;"><%= request.user.name %></p>
-
-<<<<<<< HEAD
           <%= button_to "Accept", request_path(request.id), :class => "button blocky small like", method: :patch  %>
-=======
-          <%= button_to "Accept", requests_path(match_id: request.user.id, status: true), :class => "button blocky small like", method: :post  %>
->>>>>>> ea50d552b4a528c22853a083783fd7f50146ccd4
         </div>
       </div><hr>
     <% end %>

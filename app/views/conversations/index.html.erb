@@ -20,13 +20,14 @@
 </div><hr>
 
 <div class="ui segment">
-    <h3>Matched Users</h3>
+    <h3>My Matches</h3>
     <div class="ui list">
         <% if current_user.matches.blank?%>
-            <p> You haven't matched with anyone yet.</p>
+            <p>Oh no! You haven't matched with anyone yet.</p>
         <% else %>
             <% current_user.matches.each do |user| %>
                 <div class="item">
+                    <%= gravatar_for user, size: 40 %>
                     <%= user.name %>,
                     <%= link_to 'Send message!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %><hr>
                 </div>
@@ -41,6 +42,7 @@
         <% @users.each do |user| %>
             <% if user.id != current_user.id && user.deleted? != true %>
                 <div class="item">
+                    <%= gravatar_for user, size: 40 %>
                     <%= user.name %>,
                     <%= link_to 'Send message!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %><hr>
                 </div>
