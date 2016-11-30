@@ -1,6 +1,5 @@
 <div class="ui segment">
     <h3>Mailbox</h3>
-    
     <div class="ui list">
         <div class="item">
             <% if @conversations.blank? or @conversations.empty? %>
@@ -21,8 +20,23 @@
 </div><hr>
 
 <div class="ui segment">
+    <h3>Matched Users</h3>
+    <div class="ui list">
+        <% if current_user.matches.blank?%>
+            <p> You haven't matched with anyone yet.</p>
+        <% else %>
+            <% current_user.matches.each do |user| %>
+                <div class="item">
+                    <%= user.name %>,
+                    <%= link_to 'Send message!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %><hr>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="ui segment">
     <h3>All Users</h3>
-    <!-- to do: make this matched users only -->
     <div class="ui list">
         <% @users.each do |user| %>
             <% if user.id != current_user.id && user.deleted? != true %>
