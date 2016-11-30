@@ -18,16 +18,15 @@ class RequestsController < ApplicationController
     @request.save
     redirect_to :back
   end
-  private
 
   def update
     @request.accept
-    head :no_content
+    redirect_to :back
   end
 
   def destroy
     @request.destroy
-    head :no_content
+    redirect_to :back
   end
 
   def set_request
