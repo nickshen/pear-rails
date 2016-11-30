@@ -7,7 +7,7 @@
         </div>
         <div class="col-sm-10">
           <p style="display: inline-block;"><%= request.user.name %></p>
-          
+
           <%= button_to "Accept", requests_path(match_id: request.user.id, status: true), :class => "button blocky small like", method: :post  %>
         </div>
       </div><hr>
@@ -17,6 +17,6 @@
 <br><h3>Sent Requests</h3><hr>
 <div class=”ui segment”>
     <% @outgoing.each do |request| %>
-        <p><%= request.user.name %></p>
+        <p><%= User.find_by(id: request).name %></p>
     <% end %>
 </div>
