@@ -4,7 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :email, required: true, autofocus: true%>
     <%= f.input :age, required: false %>
     <%= f.input :major, required: false %>
     <%= f.input :name, required: true %>
@@ -26,14 +26,14 @@
   <div class="col-sm-6">
     <%= simple_form_for current_user, :url => add_tag_path do |f|%>
       <%= f.label :tag_list, "Add Interests (comma separated)" %>
-      <%= f.input :tag_list, label: false, input_html: { class: 'tagbox' } %>
+      <%= f.input :tag_list, label: false, input_html: { class: 'tagbox', value: current_user.tags.to_sentence(last_word_connector: ', ')} %>
       <%= f.button :submit, :value => "Add" %>
     <% end %>
   </div>
   <div class="col-sm-6">
     <%= simple_form_for current_user, :url => remove_tag_path do |f|%>
       <%= f.label :tag_list, "Remove Interests" %>
-      <%= f.input :tag_list, label: false, input_html: { class: 'tagbox' } %>
+      <%= f.input :tag_list, label: false, input_html: { class: 'tagbox', value: current_user.tags.to_sentence(last_word_connector: ', ')} %>
       <%= f.button :submit, :value => "Remove" %>
     <% end %>
   </div>

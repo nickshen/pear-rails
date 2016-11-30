@@ -1,7 +1,12 @@
-<% if user_signed_in? %>
-  <%= render 'home/match' %>
+<% if user_signed_in?%>
+  <% if User.where.not(id: current_user.id).where.not(id: current_user.requests.select("match_id")).any? %>
+    <%= render 'home/match' %>
+  <% else %>
+    <h1>Welcome to Pear.</h1>
+    <p>Please wait for more Users to sign up!</p>
+  <% end %>
 <% else %>
+
   <h1>Welcome to Pear.</h1>
   <p>Find your partners in just a few hundred swipes.</p>
-  
-<% end %> 
+<% end %>

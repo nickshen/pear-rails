@@ -2,15 +2,15 @@
 
 ## Authors
 
-* **Alex Nakagawa** [(Github)](https://github.com/alexnakagawa3)
-* **Evan Chang** [(Github)](https://github.com/pkmnfreak)
-* **Kyle Tse** [(Github)](https://github.com/tsekylekobie)
-* **Makena Fetzer** [(Github)](https://github.com/makenafetzer)
-* **Nick Shen** [(Github)](https://github.com/nickshen)
+**Alex Nakagawa** [(Github)](https://github.com/alexnakagawa3) // **Evan Chang** [(Github)](https://github.com/pkmnfreak) // **Kyle Tse** [(Github)](https://github.com/tsekylekobie) // **Makena Fetzer** [(Github)](https://github.com/makenafetzer) // **Nick Shen** [(Github)](https://github.com/nickshen)
 
 ## Idea
 
+<<<<<<< HEAD
 This is a web application designed for college students to make deep personal connections with their peers through mutual interests. The idea is similar to the popular social media platform Tinder: a user is introduced to other users through a matching system. Each person is given an option to either pass or match with another user in the database after he or she reviews a profile, which may consist of a profile picture, major, age, and a brief bio. Once a person wishes to match with someone, the other person may choose to reciprocate the match request, at which point a Connection is made, and the two users may begin messaging each other.
+=======
+This is a web application designed for college students to make deep personal connections with their peers through mutual interests. The idea is similar to the popular social media platform Tinder: a user is introduced to other users through a matching system. Each person is given an option to either pass or match with another user in the database after he or she reviews a profile, which may consist of a profile picture, major, age, and interest tags. Once a person wishes to match with someone, the other person may choose to reciprocate the match request, at which point a Connection is made, and the two users may begin messaging each other. 
+>>>>>>> 02617cf070734d63aa30aac4978a0e91fe378e8a
 
 ## Models and Description
 
@@ -47,22 +47,39 @@ is created when a user accepts a request.
 
 * Implemented a log-in system for Users.
 
-* Users can Connect using match associations.
+* Users can Connect using match associations by either passing or requesting a match.
 
 * User can add profile picture through email.
 
 * Users can message each other through conversations.
 
-## Built With
-
-* [Gravatar](https://en.gravatar.com/) - Used to implement profile pictures
-* Other???
+* Users can view other user profiles
 
 ## Gems/APIs Added
 
-*jQuery
+* Devise [(Gem)](https://github.com/plataformatec/devise) - Log-in and authentication
 
-* [Gravatar](https://en.gravatar.com/) - Used to implement profile pictures
+* jquery-rails [(Gem)](https://rubygems.org/gems/jquery-rails) - for jquery framework
+
+* turbolinks [(Gem)](https://github.com/turbolinks/turbolinks) - for easy navigating across web app
+
+* foundation-rails [(Gem)](https://rubygems.org/gems/foundation-rails) - for sass framework and compass framework (styling on webpage)
+
+* simple-form [(Gem)](https://rubygems.org/search?utf8=%E2%9C%93&query=simple-form) - for timestamps and dates
+
+* bootstrap-sass [(Gem)](https://rubygems.org/gems/bootstrap-sass) - sass and bootstrap framework
+
+* bootstrap-sass [(Gem)](https://rubygems.org/gems/bootstrap-sass) - sass and bootstrap framework
+
+* carrierwave, mini_magick, fog - all for pictures
+
+## Division of Labor
+
+* Alex - Implemented pictures, Completed README write up, debugging, schema
+* Evan - Edit user profiles, interests, 
+* Kyle - Implemented messaging, debugging
+* Makena - Match assoications, routing between users and interactions, README, video demo
+* Nick - Styling (with jquery, bootstrap, sass), log-in, edit user profile, debugging
 
 ## Acknowledgments
 
