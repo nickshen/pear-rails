@@ -6,11 +6,8 @@
 
 ## Idea
 
-<<<<<<< HEAD
 This is a web application designed for college students to make deep personal connections with their peers through mutual interests. The idea is similar to the popular social media platform Tinder: a user is introduced to other users through a matching system. Each person is given an option to either pass or match with another user in the database after he or she reviews a profile, which may consist of a profile picture, major, age, and a brief bio. Once a person wishes to match with someone, the other person may choose to reciprocate the match request, at which point a Connection is made, and the two users may begin messaging each other.
-=======
-This is a web application designed for college students to make deep personal connections with their peers through mutual interests. The idea is similar to the popular social media platform Tinder: a user is introduced to other users through a matching system. Each person is given an option to either pass or match with another user in the database after he or she reviews a profile, which may consist of a profile picture, major, age, and interest tags. Once a person wishes to match with someone, the other person may choose to reciprocate the match request, at which point a Connection is made, and the two users may begin messaging each other. 
->>>>>>> 02617cf070734d63aa30aac4978a0e91fe378e8a
+
 
 ## Models and Description
 
