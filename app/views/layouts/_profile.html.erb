@@ -22,7 +22,7 @@
   </p>
   <hr>
 
-  <p><i> Matches: <%= @matches or "#" %></i> </p>
+  <p><i> Matches: <%= current_user.connections.count %></i> </p>
   <p><i> Conversations: <%= current_user.conversations.count %></i> </p>
 
 </div>
