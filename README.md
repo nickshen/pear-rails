@@ -73,10 +73,10 @@ is created when a user accepts a request.
 ## Division of Labor
 
 * Alex - Implemented pictures, Completed README write up, debugging, schema
-* Evan - Edit user profiles, interests, 
+* Evan - Edit user profiles functionality, add/delete interests tags 
 * Kyle - Implemented messaging, debugging
 * Makena - Match assoications, routing between users and interactions, README, video demo
-* Nick - Styling (with jquery, bootstrap, sass), log-in, edit user profile, debugging
+* Nick - Accounts/registration, edit user profile view, fixed match associations, Styling (w/ jquery, bootstrap)
 
 ## Acknowledgments
 
